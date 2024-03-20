@@ -15,7 +15,6 @@ router.put("/books/update/:id", async (req, res) => {
     }
 
     const result = await Book.findByIdAndUpdate(id, req.body);
-    console.log(result);
 
     if (!result) {
       return res.status(400).send({ message: "Book not found" });

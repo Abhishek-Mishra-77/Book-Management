@@ -6,7 +6,6 @@ const router = Router();
 router.delete("/books/delete/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    console.log(id)
     const result = await Book.findByIdAndDelete(id);
     if (!result) {
       return res.status(400).send({ message: "Book not found" });
